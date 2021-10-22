@@ -6,6 +6,7 @@ export default {
     'gray-400': '#8D8D99',
     'gray-900': '#29292E',
     'blak-700': '#202024',
+    'black-750': '#17171A',
     'blak-800': '#121214',
     'blak-900': '#09090A',
     'yellow-400': '#FFCD1E',
@@ -15,6 +16,7 @@ export default {
   },
   fontSize: {
     default: '2rem',
+    big: '3.2rem',
     large: '2.4rem',
     small: '1.6rem',
     tiny: '1.4rem',

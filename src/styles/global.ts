@@ -40,4 +40,8 @@ export default createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+  li {
+    list-style: none;
+  }
 `;
