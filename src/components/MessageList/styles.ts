@@ -64,7 +64,7 @@ export const UserContainer = styled.div`
         width: 3.4rem;
         height: 3.4rem;
         border-radius: 50%;
-        border: 4px solid ${theme.colors['blak-800']};
+        border: 4px solid ${theme.colors['black-800']};
       }
     }
 

@@ -30,7 +30,7 @@ export const Container = styled.section`
       font-weight: bold;
       text-transform: uppercase;
       font-size: ${theme.fontSize.tiny};
-      color: ${theme.colors['blak-900']};
+      color: ${theme.colors['black-900']};
       background: ${theme.colors['yellow-400']};
 
       display: flex;
