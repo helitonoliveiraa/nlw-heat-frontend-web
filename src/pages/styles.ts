@@ -1,12 +1,35 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.main`
-  max-width: 1200px;
-  height: 100vh;
-  margin: 0 auto;
+import backgroundImg from '../assets/background.svg';
 
-  display: grid;
-  grid-template-columns: 1fr 453px;
-  column-gap: 120px;
-  position: relative;
+type ContainerProps = {
+  isImgBackground: boolean;
+};
+
+export const Container = styled.main<ContainerProps>`
+  ${({ theme, isImgBackground }) => css`
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 453px;
+    column-gap: 120px;
+    position: relative;
+
+    ${isImgBackground &&
+    css`
+      &::before {
+        content: '';
+        height: 100vh;
+        width: 42rem;
+        background: url(${backgroundImg}) no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: -160px;
+        top: 0;
+      }
+    `}
+  `}
 `;
