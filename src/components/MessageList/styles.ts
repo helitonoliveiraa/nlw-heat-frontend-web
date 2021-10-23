@@ -14,11 +14,17 @@ export const Container = styled.section`
 `;
 
 export const MessageWrapper = styled.ul`
+  width: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4rem;
   flex: 1;
+
+  > div {
+    align-self: center;
+  }
 `;
 
 export const MessageContainer = styled.li`
