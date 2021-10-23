@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -24,7 +27,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors['blak-800']};
+    background: ${({ theme }) => theme.colors['black-800']};
     color: ${({ theme }) => theme.colors['gray-100']};
   }
 

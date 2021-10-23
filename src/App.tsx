@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'styled-components';
+import { ToastContainer } from 'react-toastify';
 
 import { Dashboard } from './pages/dashboard';
 
@@ -13,6 +14,7 @@ export function App() {
         <GlobalStyles />
         <Dashboard />
       </AuthProvider>
+      <ToastContainer autoClose={3000} />
     </ThemeProvider>
   );
 }
