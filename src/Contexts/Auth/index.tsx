@@ -50,6 +50,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     localStorage.setItem('@nlw-heat:token', token);
 
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+
     setUser(userResponse);
   }
 
