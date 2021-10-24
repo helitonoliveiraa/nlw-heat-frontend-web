@@ -29,6 +29,8 @@ export default createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors['black-800']};
     color: ${({ theme }) => theme.colors['gray-100']};
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   body, input, textarea, select, button {

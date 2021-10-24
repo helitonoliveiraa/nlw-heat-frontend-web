@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'styled-components';
 import { ToastContainer } from 'react-toastify';
-
 import { Dashboard } from './pages/dashboard';
 
 import { light } from './styles/themes';

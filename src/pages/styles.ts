@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import backgroundImg from '../assets/background.svg';
 
@@ -23,7 +23,7 @@ export const Container = styled.main<ContainerProps>`
       &::before {
         content: '';
         height: 100vh;
-        width: 42rem;
+        width: 420px;
         background: url(${backgroundImg}) no-repeat;
         background-size: cover;
         position: absolute;

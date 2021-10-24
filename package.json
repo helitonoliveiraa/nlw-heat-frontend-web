@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.23.0",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
@@ -17,7 +18,8 @@
     "react-toastify": "^8.0.3",
     "socket.io-client": "^4.3.2",
     "styled-components": "^5.3.3",
-    "vite-plugin-babel-macros": "^1.0.5"
+    "vite-plugin-babel-macros": "^1.0.5",
+    "vite-plugin-react-svg": "^0.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",

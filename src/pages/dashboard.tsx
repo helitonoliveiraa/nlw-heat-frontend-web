@@ -1,6 +1,9 @@
+import { AnimatePresence } from 'framer-motion';
+
 import { LoginBox } from '../components/LoginBox';
 import { MessageList } from '../components/MessageList';
 import { SendMessageForm } from '../components/SendMessageForm';
+
 import { useUser } from '../Contexts/Auth';
 
 import * as S from './styles';
@@ -12,7 +15,9 @@ export function Dashboard() {
     <S.Container isImgBackground={isAuthenticated}>
       <MessageList />
 
-      {isAuthenticated ? <SendMessageForm /> : <LoginBox />}
+      <AnimatePresence>
+        {isAuthenticated ? <SendMessageForm /> : <LoginBox />}
+      </AnimatePresence>
     </S.Container>
   );
 }

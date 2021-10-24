@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.section`
   display: flex;
@@ -8,6 +9,7 @@ export const Container = styled.section`
   align-items: flex-start;
 
   > svg {
+    width: 28rem;
     height: 2.8rem;
     margin: 3.2rem 0;
   }
@@ -27,10 +29,12 @@ export const MessageWrapper = styled.ul`
   }
 `;
 
-export const MessageContainer = styled.li`
+export const MessageContainer = styled(motion.li)`
   ${({ theme }) => css`
     max-width: 440px;
     width: 100%;
+    padding: 2rem;
+    background: ${`linear-gradient(to right, ${theme.colors['black-700']}, rgba(0, 0, 0, 0))`};
 
     &:nth-child(2) {
       margin-left: 7rem;

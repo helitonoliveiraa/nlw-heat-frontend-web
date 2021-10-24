@@ -1,11 +1,22 @@
+import { motion } from 'framer-motion';
+
 export function Logo() {
   return (
-    <svg
+    <motion.svg
       width="280"
       height="24"
       viewBox="0 0 280 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="http://www.w3.org/2000/motion.svg"
+      initial={{
+        y: 100,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{ type: 'spring', duration: 2 }}
     >
       <path
         fillRule="evenodd"
@@ -54,6 +65,6 @@ export function Logo() {
           <stop offset="1" stopColor="#FFCD1E" />
         </linearGradient>
       </defs>
-    </svg>
+    </motion.svg>
   );
 }

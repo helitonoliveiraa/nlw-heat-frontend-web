@@ -7,13 +7,38 @@ import {
   VscReport,
 } from 'react-icons/vsc';
 import { toast } from 'react-toastify';
+import { Variants, AnimatePresence } from 'framer-motion';
 
 import { useUser } from '../../Contexts/Auth';
 import { api } from '../../services/api';
 import { Loader } from '../Loader';
+import { Background } from '../Background';
 import { ToastMessage } from '../ToastMessage';
 
 import * as S from './styles';
+
+const content: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  animation: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      duration: 2,
+      bounce: 0.5,
+    },
+  },
+  exiting: {
+    y: -100,
+    opacity: 0,
+    transition: {
+      duration: 2,
+    },
+  },
+};
 
 export function SendMessageForm() {
   const { user, signOut } = useUser();
@@ -61,41 +86,49 @@ export function SendMessageForm() {
   }
 
   return (
-    <S.Container>
-      <S.Content>
-        <button type="button" onClick={signOut}>
-          <VscSignIn />
-        </button>
-
-        <S.Profile>
-          <div>
-            <img src={user?.avatar_url} alt={user?.name} />
-          </div>
-          <strong>{user?.name}</strong>
-          <div>
-            <VscGithubInverted />
-            <span>{user?.login}</span>
-          </div>
-        </S.Profile>
-
-        <S.Form onSubmit={handleSendMessage}>
-          <label htmlFor="message">Mensagem</label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Qual sua expectativa para o evento?"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-          />
-          <button type="submit">
-            {loading ? (
-              <Loader color="#FFCD1E" type="Puff" width={20} height={20} />
-            ) : (
-              'enviar mensagem'
-            )}
+    <AnimatePresence>
+      <S.Container>
+        <S.Content
+          variants={content}
+          initial="hidden"
+          animate="animation"
+          exit="exiting"
+          key="messageBox"
+        >
+          <button type="button" onClick={signOut}>
+            <VscSignIn />
           </button>
-        </S.Form>
-      </S.Content>
-    </S.Container>
+
+          <S.Profile>
+            <div>
+              <img src={user?.avatar_url} alt={user?.name} />
+            </div>
+            <strong>{user?.name}</strong>
+            <div>
+              <VscGithubInverted />
+              <span>{user?.login}</span>
+            </div>
+          </S.Profile>
+
+          <S.Form onSubmit={handleSendMessage}>
+            <label htmlFor="message">Mensagem</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Qual sua expectativa para o evento?"
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+            />
+            <button type="submit">
+              {loading ? (
+                <Loader color="#FFCD1E" type="Puff" width={20} height={20} />
+              ) : (
+                'enviar mensagem'
+              )}
+            </button>
+          </S.Form>
+        </S.Content>
+      </S.Container>
+    </AnimatePresence>
   );
 }

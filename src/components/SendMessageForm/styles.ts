@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Container = styled.main`
+export const Container = styled(motion.main)`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const Content = styled.section`
+export const Content = styled(motion.section)`
   ${({ theme }) => css`
     width: 100%;
     padding: 2.4rem;
