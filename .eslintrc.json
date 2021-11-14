@@ -36,11 +36,13 @@
       }
     ],
     "arrow-parens": "off",
+    "no-undef": "off",
     "no-unused-vars": "off",
     "operator-linebreak": "off",
     "no-use-before-define": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-use-before-define": [
       "error"

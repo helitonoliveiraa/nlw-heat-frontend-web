@@ -6,7 +6,8 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.23.0",
@@ -22,14 +23,23 @@
     "vite-plugin-react-svg": "^0.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "@vitejs/plugin-react": "^1.0.0",
+    "babel-jest": "^27.3.1",
+    "babel-preset-jest": "^27.2.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "dotenv": "^10.0.0",
@@ -43,6 +53,10 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4",
     "husky": "^7.0.2",
+    "jest": "^27.3.1",
+    "jest-dom": "^4.0.0",
+    "jest-styled-components": "^7.0.6",
+    "jest-transform-stub": "^2.0.0",
     "prettier": "^2.4.1",
     "typescript": "^4.3.2",
     "vite": "^2.6.4"
