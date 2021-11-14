@@ -17,6 +17,7 @@ export function Logo() {
         opacity: 1,
       }}
       transition={{ type: 'spring', duration: 2 }}
+      data-testid="logo"
     >
       <path
         fillRule="evenodd"

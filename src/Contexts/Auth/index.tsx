@@ -24,6 +24,7 @@ type AuthContextData = {
   signInUrl: string;
   isAuthenticated: boolean;
   signOut: () => void;
+  signIn: (githubCode: string) => void;
 };
 
 type AuthProviderProps = {
@@ -95,6 +96,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         user,
         signInUrl,
         signOut,
+        signIn,
         isAuthenticated,
       }}
     >
