@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: 'jsdom',
   testPathIgnorePatterns: ["/node_modules/", "/.husky/"],
   setupFilesAfterEnv: [
     "<rootDir>/src/tests/setupTests.ts"
@@ -10,5 +11,11 @@ module.exports = {
   moduleNameMapper: {
     "\\.svg": "<rootDir>/src/__mocks__/fileMock.ts"
   },
-  testEnvironment: 'jsdom'
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*.tsx",
+    "!src/**/*.spec.tsx",
+    "!**/node_modules/**",
+  ],
+  coverageReporters: ["json", "lcov"]
 };
